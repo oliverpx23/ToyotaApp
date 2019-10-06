@@ -1,0 +1,77 @@
+<div class="col-lg-12 row">
+
+
+        <div class="col-lg-6">
+                <div class="card">
+                        <div class="card-body">
+                                <h3 class="card-title">Aqui Estamos!</h3>
+                                <h6 class="card-subtitle">Encuentra nuestros talleres autorizados!</h6>
+
+                                <agm-map [latitude]="lat" [longitude]="lng">
+                                    <agm-marker *ngFor="let g of marcadores; let i = index" [latitude]="g.lat" [longitude]="g.long" [title]="g.titulo"></agm-marker>
+                                </agm-map>
+                        </div> 
+                </div>
+        </div>
+
+        <div class="col-lg-6">
+                <div class="card">
+                        <div class="card-body">
+                                <h3 class="card-title">Agenda un turno!</h3>
+                                <h6 class="card-subtitle">Para una mejor atencion reserva tu turno en el taller que quieras!</h6>
+
+                                <form>
+                                        <div class="card-body">
+           
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <label for="fname1" class="control-label col-form-label">Modelo de Vehiculo</label>
+                                                        <input type="text" class="form-control" id="fname1" placeholder="Modelo de Vehiculo">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <div class="form-group">
+                                                            <label for="email2" class="control-label col-form-label">Chapa</label>
+                                                            <input type="text" class="form-control" id="email2" placeholder="Chapa">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <div class="form-group">
+                                                            <label for="cono1" class="control-label col-form-label">Numero de Contacto</label>
+                                                            <input type="text" class="form-control" id="cono1" placeholder="Contacto">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <label for="donate1" class="control-label col-form-label">Motivo de agendamiento</label>
+                                                        <input type="text" class="form-control" id="donate1" placeholder="Motivo">
+                                                    </div>
+                                                </div>
+          
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-form-label">Notas Adicionales</label>
+                                                        <textarea class="form-control" id="exampleTextarea1" rows="2" placeholder="Notas"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="card-body">
+                                            <div class="action-form">
+                                                <div class="form-group m-b-0 text-center">
+                                                    <button type="submit" class="btn btn-info waves-effect waves-light">Agendar</button>
+                                                    <button type="submit" class="btn btn-dark waves-effect waves-light">Cancelar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                        </div> 
+                </div>
+        </div>
+</div>                            
