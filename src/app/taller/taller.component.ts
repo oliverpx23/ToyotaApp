@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-taller',
@@ -38,7 +39,29 @@ export class TallerComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() 
+  {
+  }
+
+  guardar()
+  {
+    Swal.fire({
+      title: `Desea realizar el agendamiento?`,
+      text: `Confirme sus datos`,
+      type: 'question',
+      showCancelButton: true,
+      confirmButtonColor: '#fe5419',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si, Confirmar!',
+      showLoaderOnConfirm: true,
+      cancelButtonText: 'No'
+    }).then((result) => {
+      if(result.value)
+      {
+        Swal.fire('Agendamiento realizado con exito','','success');
+      }
+
+    });
   }
 
 }
