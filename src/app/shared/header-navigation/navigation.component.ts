@@ -6,6 +6,9 @@ import {
   NgbCarouselConfig
 } from '@ng-bootstrap/ng-bootstrap';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
+import { UserService } from 'src/app/services/user.service';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { Router } from '@angular/router';
 declare var $: any;
 
 @Component({
@@ -19,7 +22,19 @@ export class NavigationComponent implements AfterViewInit {
 
   public showSearch = false;
 
-  constructor(private modalService: NgbModal) {}
+  name: string;
+  email: string;
+
+
+
+  constructor(private modalService: NgbModal, 
+    private _user: UserService,
+    private afAuth: AngularFireAuth, 
+    private router: Router) {
+
+    this.name = _user.nombre;
+    this.email = _user.email;
+  }
 
 
   mymessages: any[] = [
@@ -31,6 +46,22 @@ export class NavigationComponent implements AfterViewInit {
       time: '9:30 AM'
     }
   ];
+
+
+  logout() {
+    this.afAuth.auth.signOut().then(    );
+    this.cerrarsesion();
+  }
+
+  cerrarsesion()
+  {
+
+    localStorage.removeItem('email');
+    localStorage.removeItem('name');
+    window.location.href = 'http://localhost:4200/authentication';
+  }
+
+
 
   ngAfterViewInit() {}
 }

@@ -50,9 +50,8 @@ export class LoginComponent {
       }
     );
   }
-  logout() {
-    this.afAuth.auth.signOut();
-  }
+
+
 
 
 
