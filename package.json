@@ -39,7 +39,7 @@
     "datatables.net-dt": "^1.10.19",
     "firebase": "^7.1.0",
     "jquery": "^3.4.1",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "ng-chartist": "^1.1.1",
     "ng-multiselect-dropdown": "^0.2.3",
     "ng-sweet-alert": "^1.0.11",
